@@ -1,0 +1,7 @@
+C:\Dev\WcfConsoleApp\WcfConsoleApp\bin\Debug\WcfConsoleApp.exe.config
+C:\Dev\WcfConsoleApp\WcfConsoleApp\bin\Debug\WcfConsoleApp.exe
+C:\Dev\WcfConsoleApp\WcfConsoleApp\bin\Debug\WcfConsoleApp.pdb
+C:\Dev\WcfConsoleApp\WcfConsoleApp\bin\Debug\MySql.Data.dll
+C:\Dev\WcfConsoleApp\WcfConsoleApp\obj\Debug\WcfConsoleApp.csprojResolveAssemblyReference.cache
+C:\Dev\WcfConsoleApp\WcfConsoleApp\obj\Debug\WcfConsoleApp.exe
+C:\Dev\WcfConsoleApp\WcfConsoleApp\obj\Debug\WcfConsoleApp.pdb
