@@ -16,7 +16,7 @@ namespace WcfConsoleApp.BusinessLogic
         {
             var stw = Stopwatch.StartNew();
 
-            await MySqlManager.CheckDatabase("Server=127.0.0.1;Port=3306;Database=test;Uid=root;Pwd=throwin82!;", "show databases");
+            await MySqlManager.CheckDatabase("Server=127.0.0.1;Port=3306;Database=test;Uid=root;Pwd=throwin82!;MinPoolSize=0;MaxPoolSize=10", "show databases");
             
             return string.Format("test: {0}ticks", stw.ElapsedTicks);
         }

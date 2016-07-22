@@ -18,14 +18,15 @@ namespace WcfConsoleApp
         {
             Console.WriteLine("AppTester.Run()");
 
-            System.Net.ServicePointManager.DefaultConnectionLimit = 100;
+            System.Net.ServicePointManager.DefaultConnectionLimit = 1000;
 
             var stw = Stopwatch.StartNew();
 
             while (true)
             {
                 //Task.Delay(1);
-                SendWebRequest("http://localhost:8080/test/1", "");
+                //SendWebRequest("http://localhost:8080/test/1", "");
+                SendWebRequest("http://localhost:8080/register/1", "");
                 if (stw.ElapsedMilliseconds >= 1000)
                 {
                     stw.Restart();
@@ -37,6 +38,8 @@ namespace WcfConsoleApp
 
         static async void SendWebRequest(string uri, string postBody)
         {
+            string responseString;
+
             try
             {
                 HttpWebRequest rq = (HttpWebRequest)WebRequest.Create(uri);
@@ -51,7 +54,11 @@ namespace WcfConsoleApp
 
                 using (var res = (HttpWebResponse)(await rq.GetResponseAsync()))
                 {
-
+                    using (var stream = res.GetResponseStream())
+                    {
+                        var reader = new StreamReader(stream, Encoding.UTF8);
+                        responseString = await reader.ReadToEndAsync();
+                    }
                 }
 
                 Interlocked.Increment(ref AppTester.processCount);

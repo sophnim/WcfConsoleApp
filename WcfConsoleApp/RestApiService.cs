@@ -13,28 +13,24 @@ namespace WcfConsoleApp
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.PerCall, AddressFilterMode = AddressFilterMode.Any)]
     public class RestApiService : IRestApiService
     {
-        public Task<string> RestApi_echo(string param)
+        public async Task<string> RestApi_echo(string param)
         {
-            return Task<string>.Run(() => { return string.Format("Echo: {0}", param); });
+            return await Task<string>.Run(() => { return string.Format("Echo: {0}", param); });
         }
 
-        public Task<string> RestApi_test(string param)
+        public async Task<string> RestApi_test(string param)
         {
-            return BLogic_test.RestApi_test();
+            return await BLogic_test.RestApi_test();
         }
 
-        public Task<string> RestApi_status(string param, Stream content)
+        public async Task<string> RestApi_register(string param, Stream content)
         {
-            return BLogic_status.RestApi_status(param, content);
+            return await BLogic_register.RestApi_register(param, content);
         }
 
-        public Task<string> RestApi_register(string param, Stream content)
+        public async Task<string> RestApi_status(string param, Stream content)
         {
-            return BLogic_register.RestApi_register(param, content);
+            return await BLogic_status.RestApi_status(param, content);
         }
-
-
-
-
     }
 }

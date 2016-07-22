@@ -11,7 +11,7 @@ namespace WcfConsoleApp.BusinessLogic
     {
         public static async Task<string> RestApi_register(string param, Stream content)
         {
-            await Task.Delay(1);
+            await Task.Delay(0);
 
             return "test";
         }
