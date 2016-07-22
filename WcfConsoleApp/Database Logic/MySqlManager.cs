@@ -11,7 +11,7 @@ namespace WcfConsoleApp.DatabaseLogic
 {
     public class MySqlManager
     {
-        public static async Task<bool> CheckDatabase(string connStr, string query)
+        public static async Task<bool> DoQuery(string connStr, string query)
         {
             try
             {

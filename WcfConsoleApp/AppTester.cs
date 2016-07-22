@@ -24,9 +24,8 @@ namespace WcfConsoleApp
 
             while (true)
             {
-                //Task.Delay(1);
-                //SendWebRequest("http://localhost:8080/test/1", "");
-                SendWebRequest("http://localhost:8080/register/1", "");
+                SendWebRequest("http://localhost:8080/test/1", "");
+                
                 if (stw.ElapsedMilliseconds >= 1000)
                 {
                     stw.Restart();
